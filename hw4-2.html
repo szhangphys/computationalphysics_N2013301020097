@@ -1,0 +1,120 @@
+<h1 id="第四次作业">第四次作业</h1>
+
+<p><br></p>
+
+
+
+<h2 id="作业题目分析">作业题目分析</h2>
+
+<p>第一章的练习题，皆为数值求解常微分方程。因此我写了一个通用的求显式常微分方程数值解的程序。</p>
+
+<p><br></p>
+
+
+
+<h2 id="程序说明">程序说明</h2>
+
+
+
+<h3 id="1-解常微分方程">1. 解常微分方程</h3>
+
+<p>程序在这里。 <br>
+首先需要手动输入常微分方程。譬如对方程 <script id="MathJax-Element-225" type="math/tex"> f' = -x * y </script>，写入</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deriv</span><span class="hljs-params">(x, y)</span>:</span>
+    <span class="hljs-keyword">return</span> -x * y</code></pre>
+
+<p>然后使用求解函数 <code>f()</code>, 输入方程<code>deriv</code>，初始值<code>init = (x0, y0)</code>，末值<code>x1</code>；可以选择输入函数值的区间<code>y_range</code>，每两点间的迭代数<code>step</code>，点的数目<code>point</code>，如果不输入则取默认值。例如：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs erlang"><span class="hljs-function"><span class="hljs-title">f</span><span class="hljs-params">(deriv)</span></span></code></pre>
+
+<p>or</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs erlang"><span class="hljs-function"><span class="hljs-title">f</span><span class="hljs-params">(deriv, init = (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span>, <span class="hljs-title">x1</span> = 10, <span class="hljs-title">y_range</span> = <span class="hljs-params">(-<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</span>, <span class="hljs-title">step</span> = 1, <span class="hljs-title">point</span> = 1000)</span></code></pre>
+
+<p>函数的返回值为从<code>x = init[0]</code>到<code>x = x1</code>的一组点，点的数目为<code>point+1</code>，点的格式为list, 每个item形式为<code>[x, y, deriv(x, y)]</code>。可以写<code>f(deriv)[-1]</code>即得到末态点<code>[x1, y1, deriv(x1, y1)]</code>。</p>
+
+
+
+<h3 id="2-绘制图像">2. 绘制图像</h3>
+
+<p>给定函数<code>deriv</code>，初始值，末值，可以直接绘制图像。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs avrasm">import matplotlib<span class="hljs-preprocessor">.pyplot</span> as plt
+plt<span class="hljs-preprocessor">.plot</span>(*trans(f(deriv, init = (-<span class="hljs-number">3</span>, <span class="hljs-number">0.01</span>), x1 = <span class="hljs-number">3</span>)))
+plt<span class="hljs-preprocessor">.show</span>()</code></pre>
+
+<p>要想绘制函数在一定范围内的多条图像（类似<code>stream plot</code>），可使用<code>draw_1</code>和<code>draw_2</code>函数。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs erlang">import matplotlib.pyplot as plt
+<span class="hljs-function"><span class="hljs-title">draw_1</span><span class="hljs-params">(deriv, x_range = (-<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)</span>, <span class="hljs-title">y_range</span> = <span class="hljs-params">(-<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)</span>, <span class="hljs-title">density</span> = 8)
+<span class="hljs-title">draw_2</span><span class="hljs-params">(deriv, x_range = (-<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)</span>, <span class="hljs-title">y_range</span> = <span class="hljs-params">(-<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)</span>, <span class="hljs-title">density</span> = 16)
+<span class="hljs-title">plt</span>.<span class="hljs-title">show</span><span class="hljs-params">()</span></span></code></pre>
+
+<p>两种函数绘图风格各有不同，请自行研究啦^_^</p>
+
+<p><br></p>
+
+
+
+<h2 id="实例">实例</h2>
+
+
+
+<h3 id="1-求解常微分方程">1. 求解常微分方程</h3>
+
+<ul>
+<li>对于方程 <script id="MathJax-Element-226" type="math/tex">dv/dt = 10 - v</script>，初始值 <script id="MathJax-Element-227" type="math/tex">(v, t) = (0, 0)</script>，求 <script id="MathJax-Element-228" type="math/tex">t = 2</script> 时 <script id="MathJax-Element-229" type="math/tex">v</script> 的值。</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deriv</span><span class="hljs-params">(t, v)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">10</span> - v
+<span class="hljs-keyword">print</span> f(deriv, (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-number">2</span>)[-<span class="hljs-number">1</span>]</code></pre>
+
+<p>得到<script id="MathJax-Element-230" type="math/tex">t = 2</script>时<script id="MathJax-Element-231" type="math/tex">v = 8.646645360453359</script>。</p>
+
+
+
+<h3 id="2-绘出图像">2. 绘出图像</h3>
+
+<ul>
+<li>绘出方程 <script id="MathJax-Element-232" type="math/tex">dv/dt = 10 - v</script> 的解的图像，初始值为<script id="MathJax-Element-233" type="math/tex">(v, t) = (0, 0)</script>。</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs avrasm">import matplotlib<span class="hljs-preprocessor">.pyplot</span> as plt
+plt<span class="hljs-preprocessor">.plot</span>(*trans(f(deriv, init = (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), x1 = <span class="hljs-number">6</span>)))
+plt<span class="hljs-preprocessor">.show</span>()</code></pre>
+
+<p><img title="deriv.png" alt="enter image description here" src="https://lh3.googleusercontent.com/-uz2tJdohffk/VvATRrTkz1I/AAAAAAAAAGY/_cAEJyDhx34eVvQ9AL_F9TLAys8rRPj4w/s0/deriv.png"></p>
+
+
+
+<h3 id="3-更多绘图">3. 更多绘图</h3>
+
+<ul>
+<li><script id="MathJax-Element-234" type="math/tex">dv/dt = 10 - v</script> 的图像 <br>
+<img title="deriv+.png" alt="enter image description here" src="https://lh3.googleusercontent.com/peWtEy30dRbOOlt-rQUL86Q03A__FC5R4ikMu15BrtiP7E-1alDRY58_GthF0qdG8nE=s0"></li>
+</ul>
+
+<p><br> <br>
+* <script id="MathJax-Element-235" type="math/tex">dy / dx = -0.5y + x - 0.1y^2 </script>的图像</p>
+
+<p><img title="f0.png" alt="enter image description here" src="https://lh3.googleusercontent.com/-yJlaOQqmBVo/VvAXY5aRy0I/AAAAAAAAAG0/dxR10h8ikWwEieSC1HAPhE9HK2QCPaRfg/s0/f0.png"></p>
+
+<p><br> <br>
+* <script id="MathJax-Element-236" type="math/tex"> dy/dx = log(y)</script>的图像 <br>
+<img title="f1.png" alt="enter image description here" src="https://lh3.googleusercontent.com/-u4LpZraFtaQ/VvAYmd7F0cI/AAAAAAAAAHI/PgcnF-E2mKc_ohWuZzamAC7nRhpwqR8Hw/s0/f1.png"></p>
