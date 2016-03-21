@@ -1,9 +1,7 @@
 
-2016.3.21
----------
-
-
 我去我终于把曹一的[第二次作业程序][1]看懂了。
+-------
+
 
 程序第110~113行是：
 ```
@@ -47,7 +45,9 @@ for row in range(7):
 ```
 试着运行一下这段代码，你看到了什么？能解释原因吗？
 
+(づ●─●)づ 
 
+2016.3.21
 
 [^shifting-operations]:https://docs.python.org/2/reference/expressions.html#shifting-operations
 
