@@ -1,5 +1,5 @@
 私の惑星へようこそ~
----------------------
+==============
 
 初めまして、夕歌です！
 
@@ -15,13 +15,15 @@
 
 *以上！*
 
+<br/><br/>
 宿題リンク
 ---------------
-[第三の宿題][1]
+[第三の宿題](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/new79_drawBETA.py)
+
+<br/>
+日記
+---------------
+[我去我终于把曹一的第二次作业程序看懂了](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/Journal/diary_1.md)
 
 
 
-
-
-
-[1]: https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/new79_drawBETA.py
