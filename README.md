@@ -19,6 +19,7 @@
 宿題リンク
 ---------------
 [第三の宿題](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/new79_drawBETA.py)
+[第四の宿題](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/hw4-2.md)
 
 <br/>
 日記
