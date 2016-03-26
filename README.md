@@ -25,7 +25,7 @@
 <br/>
 日記
 ---------------
-* [ノート](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/Journal/notebook.md) 连続更新中
+* [ノート](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/Journal/notebook.md) （连続更新中）
 
 * [我去我终于把曹一的第二次作业程序看懂了](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/Journal/diary_1.md)
 
