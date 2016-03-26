@@ -16,10 +16,10 @@ Asc_Table=[0x00, 0x00, 0x00, 0x00, 0x00, # ' '
          0x00, 0x07, 0x00, 0x07, 0x00,   #  " 
          ...
 ```
-其中的 ``>>`` 是shifting operation:
+其中的 ``>>`` 是[shifting operation][4]:
 > These operators accept plain or long integers as arguments. The arguments are converted to a common type. They shift the first argument to the left or right by the number of bits given by the second argument.
 
->A right shift by n bits is defined as division by pow(2, n). A left shift by n bits is defined as multiplication with pow(2, n). Negative shift counts raise a ValueError exception.[^shifting-operations]
+> A right shift by n bits is defined as division by pow(2, n). A left shift by n bits is defined as multiplication with pow(2, n). Negative shift counts raise a ValueError exception.
 
 ``a >> b`` 就是把整数a换为二进制数，然后向右移动b位。``a << b`` 则是向左。
 
@@ -49,8 +49,8 @@ for row in range(7):
 
 **2016.3.21**
 
-[^shifting-operations]:https://docs.python.org/2/reference/expressions.html#shifting-operations
 
 [1]:https://github.com/breakingDboy/computational_physics_2013301020120/blob/master/show_gif.py
 [2]:https://docs.python.org/2/reference/expressions.html#binary-bitwise-operations
 [3]:https://en.wikipedia.org/wiki/Bitwise_operation
+[4]:https://docs.python.org/2/reference/expressions.html#shifting-operations
