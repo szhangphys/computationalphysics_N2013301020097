@@ -22,6 +22,8 @@
 
 * [第四、五の宿題](https://github.com/MitoYuuka/computationalphysics_N2013301020097/blob/master/hw4-2.md)
 
+* [第六の宿題](https://www.zybuluo.com/MitoY/note/335836)
+
 <br/>
 日記
 ---------------
